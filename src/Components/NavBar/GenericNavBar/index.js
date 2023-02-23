@@ -13,9 +13,9 @@ const GenericNavBar = () => {
         </div>
         <nav>
           <ul>
-            {navbarData.map((item) => {
+            {navbarData.map((item, i) => {
               return (
-                <li key={item.id}>
+                <li key={i}>
                   <a href={item.link}>{item.title}</a>
                 </li>
               );
@@ -24,9 +24,9 @@ const GenericNavBar = () => {
         </nav>
         <div className="header-social-links">
           <ul>
-            {socialLinkData.map((social) => {
+            {socialLinkData.map((social, i) => {
               return (
-                <li key={social.key} className="social-media-item">
+                <li key={i} className="social-media-item">
                   <a href={social.link}>{social.icon}</a>
                 </li>
               );
