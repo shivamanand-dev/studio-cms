@@ -1,22 +1,39 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+
+import { useRouter } from "next/router";
 import React from "react";
 
 import { navbarData, socialLinkData } from "@/utils/constants/app_constants";
 
 import { StyledGenericNavBar } from "./StyledGenericNavBar";
 
-const GenericNavBar = () => {
+const GenericNavBar = ({ title = "Appstrom" }) => {
+  const router = useRouter();
+
+  const routePage = (link) => {
+    router.push(link);
+  };
   return (
     <StyledGenericNavBar>
       <div className="header-container main-container">
         <div className="header-logo">
-          <h3 className="logo">AppStrom</h3>
+          <h3 className="logo">{title}</h3>
         </div>
         <nav>
           <ul>
             {navbarData.map((item) => {
               return (
                 <li key={item.id}>
-                  <a href={item.link}>{item.title}</a>
+                  <p
+                    onClick={() => {
+                      routePage(item.link);
+                    }}
+                    onKeyDown={() => {
+                      routePage(item.link);
+                    }}
+                  >
+                    {item.title}
+                  </p>
                 </li>
               );
             })}
