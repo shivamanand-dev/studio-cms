@@ -5,10 +5,7 @@ import GenericNavBar from "src/Components/NavBar/GenericNavBar";
 export default function Home() {
   return (
     <>
-      {/* <TransparentBtn /> */}
-      <GenericHero>
-        <GenericNavBar></GenericNavBar>
-      </GenericHero>
+      <GenericNavBar title="Hello"></GenericNavBar>
     </>
   );
 }
