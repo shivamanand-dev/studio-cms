@@ -4,6 +4,12 @@
 }
 
 .main-container {
-  max-width: 1000px;
+  max-width: 1800px;
   margin: 0 auto;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 0.2rem;
 }

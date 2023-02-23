@@ -8,7 +8,9 @@ const GenericNavBar = () => {
   return (
     <StyledGenericNavBar>
       <div className="header-container main-container">
-        <h3>AppStorm</h3>
+        <div className="header-logo">
+          <h3 className="logo">AppStrom</h3>
+        </div>
         <nav>
           <ul>
             {navbarData.map((item) => {
@@ -25,7 +27,7 @@ const GenericNavBar = () => {
             {socialLinkData.map((social) => {
               return (
                 <li key={social.key} className="social-media-item">
-                  <a href={social.link}>f</a>
+                  <a href={social.link}>{social.icon}</a>
                 </li>
               );
             })}

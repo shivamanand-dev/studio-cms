@@ -4,7 +4,7 @@ import {
   IoLogoTwitter,
   IoLogoYoutube,
   IoTicketOutline,
-} from "react-icons/io";
+} from "react-icons/io5";
 
 export const navbarData = [
   { id: 1, link: "#", title: "Home" },
