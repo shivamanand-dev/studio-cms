@@ -1,7 +1,8 @@
 import "../styles/globals.css";
 
-import theme from "src/Theme/theme";
 import { ThemeProvider } from "styled-components";
+
+import theme from "@/utils/Theme/theme";
 
 export default function App({ Component, pageProps }) {
   return (
