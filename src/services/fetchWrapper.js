@@ -1,7 +1,7 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { backendUri } from "@/utils/constants/app_config";
+import { api_key, backendUri } from "@/utils/constants/app_config";
 
-import { userService } from "./user.services";
+// import { pageService } from "./user.services";
 
 export const fetchWrapper = {
   post,
@@ -30,6 +30,7 @@ async function get(url) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      _id: api_key,
     },
     origin: "*",
   };
@@ -60,14 +61,14 @@ async function put(url, body) {
   return await fetch(getCombinedUrl(url), requestOption).then(handleResponse);
 }
 
-function handleResponse(response) {
-  return response.text().then((text) => {
+function handleResponse(res) {
+  return res.text().then((text) => {
     const data = text && JSON.parse(text);
-    if (!response.ok) {
-      if ([401].includes(response.status) && userService.userValue) {
-        // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
-        userService.logout();
-      }
+    if (!res.ok) {
+      // if ([401].includes(response.status) && userService.userValue) {
+      //   // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
+      //   userService.logout();
+      // }
       return data;
     }
 
