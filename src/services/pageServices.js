@@ -15,7 +15,7 @@ export const pageService = {
 };
 
 async function getPageData() {
-  return await fetchWrapper.get("staticData/").then((res) => {
+  return await fetchWrapper.get("/staticData").then((res) => {
     // pageSubject.next(res);
 
     localStorage.setItem("page", JSON.stringify(res));
